@@ -95,23 +95,34 @@
 					<!-- Write the JavaScript code to build your map. -->
 					<script type="text/javascript">
 
-					//Declare the map object itself.
-					var map = new ol.Map({
-						target: 'map',
-        
-						//Set up the layers that will be loaded in the map
-						layers: [
-						new ol.layer.Tile({
-							source: new ol.source.MapQuest({layer: 'sat'})
-						})
-						],
-        
-						//Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
-                        view: new ol.View({
-                            center: ol.proj.transform([35.2167, 31.7833], 'EPSG:4326', 'EPSG:3857'),
-                            zoom: 8
-                        })
+                        var projection = ol.proj.get('EPSG:3857');
 
+                        var BaseMap = new ol.layer.Tile({
+                                source: new ol.source.MapQuest({layer: 'sat'})
+                        });
+
+                        var BoC = new ol.layer.Vector({
+                            source: new ol.source.KML({
+                                projection: projection,
+                                url: 'kml/birthofchrist.kml'
+                            })
+                        });
+
+                        //Declare the map object itself.
+                        var map = new ol.Map({
+                            target: 'map',
+
+                            //Define the default map projection
+
+
+                            //Set up the layers that will be loaded in the map
+                            layers: [BaseMap,BoC],
+
+                            //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
+                            view: new ol.View({
+                                center: ol.proj.transform([35.2167, 31.7833], 'EPSG:4326', projection),
+                                zoom: 8
+                            })
 					});
 					</script>
 				
