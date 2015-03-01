@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Birth of Christ</name>
+      <description>
+        <![CDATA[
+			6 BC
+			Bethlehem
+			<a href="https://www.lds.org/scriptures/nt/luke/2.4-7?lang=eng#3">Luke 2:4-7</a>	
+			Christ is born in a humble manger
+			<a href="http://whc.unesco.org/en/list/1433">Church of the Nativity</a>
+        ]]>
+      </description>
+	  <styleUrl>#Icon</styleUrl>
+      <Point>
+        <coordinates>31.704301,35.207538</coordinates>
+      </Point>
+    </Placemark>
+	<Style id="Icon">
+    <IconStyle>
+      <Icon><href>icons/celestia_s_sun_16_9_by_mysticalpha-d8g1vb9.png</href></Icon>
+      <scale>1</scale>
+    </IconStyle>
+  </Style>
+  </Document>
+</kml>
