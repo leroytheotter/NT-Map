@@ -14,12 +14,12 @@
       </description>
 	  <styleUrl>#Icon</styleUrl>
       <Point>
-        <coordinates>35.207538, 31.704301</coordinates>
+        <coordinates>35.207538,31.704301</coordinates>
       </Point>
     </Placemark>
 	<Style id="Icon">
     <IconStyle>
-      <Icon><href>icons/celestia_s_sun_16_9_by_mysticalpha-d8g1vb9.png</href></Icon>
+      <Icon><href>data/icons/celestia_s_sun_16_9_by_mysticalpha-d8g1vb9.png</href></Icon>
       <scale>1</scale>
     </IconStyle>
   </Style>
