@@ -94,13 +94,7 @@
     
 					<!-- Write the JavaScript code to build your map. -->
 					<script type="text/javascript">
-                        function CenterMap(long, lat) {
-                            console.log("Long: " + long + " Lat: " + lat);
-                            map.getView().setCenter(ol.proj.transform([long, lat], 'EPSG:4326', 'EPSG:3857'));
-                            map.getView().setZoom(5);
-                        }
 
-	
 					//Declare the map object itself.
 					var map = new ol.Map({
 						target: 'map',
