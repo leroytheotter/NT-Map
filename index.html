@@ -113,7 +113,8 @@
 						],
         
 						//Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
-						CenterMap (31.7833, 35.2167)
+						map.getView().setCenter(ol.proj.transform([31.7833, 35.2167], 'EPSG:4326', 'EPSG:3857'));
+                        map.getView().setZoom(5);
 
 					});
 					</script>
