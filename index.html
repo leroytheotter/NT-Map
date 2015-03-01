@@ -142,7 +142,7 @@
                         // display popup on click
 
                         map.on('click', function(evt) {
-                            //try to destroy it before doing anything else...s
+                            //try to destroy it before doing anything else
                             $(element).popover('destroy');
 
                             //Try to get a feature at the point of interest
@@ -156,7 +156,7 @@
                                 var geometry = feature.getGeometry();
                                 var coord = geometry.getCoordinates();
                                 popup.setPosition(coord);
-                                var displaycontent = '<b>Owner:</b> ' + feature.get('name') + '<br><b>License:</b> ' + feature.get('license');
+                                var displaycontent = '<b>Event:</b> ' + feature.get(1) + '<br><b>Date:</b> ' + feature.get(2);
                                 $(element).popover({
                                     'placement': 'top',
                                     'html': true,
