@@ -42,7 +42,7 @@ var vectorLayer = new ol.layer.Vector({
 	source: new ol.source.KML({
 		projection: projection,
 		//normally this kml file would be sitting on your server
-		url: 'kml/sundials.kml'
+		url: 'data/kml/birthofchrist.kml'
 	})	
 });
 		
