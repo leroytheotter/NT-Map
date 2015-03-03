@@ -6,12 +6,16 @@
       <description>
         <![CDATA[
 			<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100;border-collapse:collapse;padding:3px 3px 3px 3px">
-			<td>date<td/>
-			<td>6 BC<td/>
-			Bethlehem
-			<a href="https://www.lds.org/scriptures/nt/luke/2.4-7?lang=eng#3">Luke 2:4-7</a>	
-			Christ is born in a humble manger
-			<a href="http://whc.unesco.org/en/list/1433">Church of the Nativity</a>
+			<td>date</td>
+			<td>6 BC</td>
+			<td>Location</td>
+			<td>Bethlehem</td>
+			<td>Scriptoral Reference</td>
+			<td><a href="https://www.lds.org/scriptures/nt/luke/2.4-7?lang=eng#3">Luke 2:4-7</a></td>
+			<td>Description</td>
+			<td>Christ is born in a humble manger</td>
+			<td>Source</td>
+			<td><a href="http://whc.unesco.org/en/list/1433">Church of the Nativity</a></td>
         ]]>
       </description>
 	  <styleUrl>#Icon</styleUrl>
