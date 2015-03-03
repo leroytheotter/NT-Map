@@ -156,7 +156,7 @@
                                 var geometry = feature.getGeometry();
                                 var coord = geometry.getCoordinates();
                                 popup.setPosition(coord);
-                                var displaycontent = '<b>' + feature.get('name') + '</b>' + '<br>' + feature.get('description');
+                                var displaycontent = '<b>' + feature.get('name') + '</b>' + '<br>' + '<br> + feature.get('description');
                                 $(element).popover({
                                     'placement': 'top',
                                     'html': true,
@@ -170,7 +170,15 @@
                             }
                         });
 
+                        /*
+
+                        !!!!!!!!!!!!!--Delete This Code If Not Needed--!!!!!!!!!!!!!
+
+                        I'm not sure what this code does, except cause an erorr that also doesn't do anything,
+                        so if I can't find a reason to keep it then - off with its head
+
                         // change mouse cursor when over marker
+
                         map.on('pointermove', function(e) {
                             if (e.dragging) {
                                 $(element).popover('destroy');
@@ -180,6 +188,7 @@
                             var hit = map.hasFeatureAtPixel(pixel);
                             map.getTarget().style.cursor = hit ? 'pointer' : '';
                         });
+                         */
 
 
 					</script>
