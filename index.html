@@ -156,7 +156,7 @@
                                 var geometry = feature.getGeometry();
                                 var coord = geometry.getCoordinates();
                                 popup.setPosition(coord);
-                                var displaycontent = '<b>' + feature.get('name') + '</b>' + '<br>' + '<br> + feature.get('description');
+                                var displaycontent = '<b>' + feature.get('name') + '</b>' + '<br>' + '<br>' + feature.get('description');
                                 $(element).popover({
                                     'placement': 'top',
                                     'html': true,
