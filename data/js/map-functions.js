@@ -20,7 +20,7 @@ function setup_map() {
 
     //Create a new map object and connect it to the right DIV id that is in the html.
     map = new ol.Map({
-        target: 'map_id',
+        target: 'map',
 
         //Set up the layers that will be loaded in the map
         layers: [BaseMap,BoC],

@@ -45,7 +45,7 @@
 
 </head>
 
-<body onload="map=setup_map()";>
+<body onload="setup_map()";>
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -90,18 +90,17 @@
             <div class="col-lg-12">
                 <!--<h1>New Testament History - Interactive Map</h1>-->
                 <!--<p>Navigate at your own risk.</p>-->
-				
+
+                <!-- load the jquery script that supports the popup bubbles. -->
+                <script src="data/js/jquery.min.js" type="text/javascript"></script>
+                <script src="data/js/bootstrap.min.js" type="text/javascript"></script>
+                <script src="data/js/example-behaviour.js" type="text/javascript"></script>
 				
                 <!-- Specify a div tag area that will hold the map itself. -->
 				<div id="map" class="map">
                     <div id="popup" class="popup"></div>
                 </div>
 
-                <!-- load the jquery script that supports the popup bubbles. -->
-                <script src="data/js/jquery.min.js" type="text/javascript"></script>
-                <script src="data/js/bootstrap.min.js" type="text/javascript"></script>
-                <script src="data/js/example-behaviour.js" type="text/javascript"></script>
-    
 					<!-- Write the JavaScript code to build your map. -->
 					 <script type="text/javascript">
 
