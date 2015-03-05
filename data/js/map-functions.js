@@ -9,30 +9,6 @@ var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, WoW, Geth, Ca
 //Define the default map projection
 var projection = ol.proj.get('EPSG:3857');
 
-/*/Function to set up the map. Called when the web page body loads.
-function setup_map() {
-
-    //Here we are declaring the projection object for Web Mercator
-    projection = ol.proj.get('EPSG:3857');
-
-    //Build the layer objects for each KML file
-    CreateLayers();
-
-    //Create a new map object and connect it to the right DIV id that is in the html.
-    map = new ol.Map({
-        target: 'map',
-
-        //Set up the layers that will be loaded in the map
-        layers: [BaseMap,BoC],
-
-        //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
-        view: new ol.View({
-            center: ol.proj.transform([35.2167, 31.7833], 'EPSG:4326', projection),
-            zoom: 8
-        })
-    });
-}*/
-
 //Location selection function
 function LocationSelector(location)
 {

@@ -104,6 +104,10 @@
 					<!-- Write the JavaScript code to build your map. -->
 					 <script type="text/javascript">
 
+                        /**********************************************************/
+                        //Begin map creation section
+                        /**********************************************************/
+
                         var projection = ol.proj.get('EPSG:3857');
 
                         //Build the layer objects for each KML file
@@ -123,7 +127,9 @@
                             })
 					    });
 
-                        //****************************************
+                        /**********************************************************/
+                        //End map creation section
+                        /**********************************************************/
 
                         var element = document.getElementById('popup');
 
