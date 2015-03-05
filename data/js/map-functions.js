@@ -9,7 +9,7 @@ var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, WoW, Geth, Ca
 //Define the default map projection
 var projection = ol.proj.get('EPSG:3857');
 
-//Function to set up the map. Called when the web page body loads.
+/*/Function to set up the map. Called when the web page body loads.
 function setup_map() {
 
     //Here we are declaring the projection object for Web Mercator
@@ -31,7 +31,7 @@ function setup_map() {
             zoom: 8
         })
     });
-}
+}*/
 
 //Location selection function
 function LocationSelector(location)
