@@ -38,6 +38,9 @@
 	<!-- Here we link to the local copy of OpenLayers -->
     <script src="data/js/ol.js" type="text/javascript"></script>
 
+    <!-- Here we link to the map functions script -->
+    <script src="data/js/map-functions.js" type="text/javascript"></script>
+
 
 
 </head>
@@ -102,12 +105,12 @@
 					<!-- Write the JavaScript code to build your map. -->
 					 <script type="text/javascript">
 
-                        var projection = ol.proj.get('EPSG:3857');
+                        /*var projection = ol.proj.get('EPSG:3857');
 
                         //Define the default map projection
                         var BaseMap = new ol.layer.Tile({
                                 source: new ol.source.MapQuest({layer: 'osm'})
-                        });
+                        });*/
 
                         var BoC = new ol.layer.Vector({
                             source: new ol.source.KML({
