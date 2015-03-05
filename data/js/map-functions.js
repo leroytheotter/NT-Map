@@ -10,7 +10,7 @@ var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, WoW, Geth, Ca
 var projection = ol.proj.get('EPSG:3857');
 
 //Function to set up the map. Called when the web page body loads.
-function setup_map(){
+function setup_map() {
 
     //Here we are declaring the projection object for Web Mercator
     projection = ol.proj.get('EPSG:3857');
@@ -23,7 +23,7 @@ function setup_map(){
         target: 'map_id',
 
         //Set up the layers that will be loaded in the map
-        layers: [Base]
+        layers: [Base],
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
@@ -31,6 +31,7 @@ function setup_map(){
             zoom: 1
         })
     });
+}
 
 //Define the KML Layers
 var BoC;
