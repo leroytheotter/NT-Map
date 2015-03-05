@@ -105,7 +105,7 @@
 					 <script type="text/javascript">
 
                         /**********************************************************/
-                        //Begin map creation section
+                        /*                Begin map creation section              */
                         /**********************************************************/
 
                         var projection = ol.proj.get('EPSG:3857');
@@ -127,10 +127,18 @@
                             })
 					    });
 
+                        //Add some useful map controls
+                        map.addControl(new ol.control.ScaleLine());
+                        map.addControl(new ol.control.ZoomSlider());
+
                         /**********************************************************/
-                        //End map creation section
+                        /*                End map creation section                */
                         /**********************************************************/
 
+
+                        /**********************************************************/
+                        /*              Begin popup bubble scripting              */
+                        /**********************************************************/
                         var element = document.getElementById('popup');
 
                         var popup = new ol.Overlay({
@@ -139,6 +147,7 @@
                             stopEvent: false
                         });
                         map.addOverlay(popup);
+
 
                         // display popup on click
 
@@ -172,6 +181,10 @@
                                 $(element).popover('destroy');
                             }
                         });
+
+                        /**********************************************************/
+                        /*               End popup bubble scripting               */
+                        /**********************************************************/
 
 					</script>
 				

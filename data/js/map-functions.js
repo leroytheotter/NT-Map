@@ -9,7 +9,9 @@ var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, WoW, Geth, Ca
 //Define the default map projection
 var projection = ol.proj.get('EPSG:3857');
 
-//Location selection function
+/**********************************************************/
+/*             Begin location selection function          */
+/**********************************************************/
 function LocationSelector(location)
 {
     switch (location)
@@ -19,8 +21,14 @@ function LocationSelector(location)
 
     }
 }
+/**********************************************************/
+/*             End location selection function            */
+/**********************************************************/
 
-//Create the Layers
+
+/**********************************************************/
+/*             Begin layer definition function            */
+/**********************************************************/
 function CreateLayers() {
     BaseMap = new ol.layer.Tile({
         source: new ol.source.MapQuest({layer: 'osm'})
@@ -34,3 +42,6 @@ function CreateLayers() {
     })
 
 }
+/**********************************************************/
+/*             End layer definition function              */
+/**********************************************************/
