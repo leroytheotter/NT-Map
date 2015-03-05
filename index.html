@@ -103,21 +103,11 @@
 
 					<!-- Write the JavaScript code to build your map. -->
 					 <script type="text/javascript">
-                         var map = setup_map();
 
-                        /*var projection = ol.proj.get('EPSG:3857');
+                        var projection = ol.proj.get('EPSG:3857');
 
-                        //Define the default map projection
-                        var BaseMap = new ol.layer.Tile({
-                                source: new ol.source.MapQuest({layer: 'osm'})
-                        });
-
-                        var BoC = new ol.layer.Vector({
-                            source: new ol.source.KML({
-                                projection: projection,
-                                url: 'data/kml/birthofchrist.kml'
-                            })
-                        });
+                        //Build the layer objects for each KML file
+                        CreateLayers();
 
                         //Declare the map object itself.
                         var map = new ol.Map({
@@ -131,7 +121,9 @@
                                 center: ol.proj.transform([35.2167, 31.7833], 'EPSG:4326', projection),
                                 zoom: 8
                             })
-					    });*/
+					    });
+
+                        //****************************************
 
                         var element = document.getElementById('popup');
 
