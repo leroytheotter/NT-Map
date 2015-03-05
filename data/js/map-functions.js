@@ -23,12 +23,12 @@ function setup_map() {
         target: 'map_id',
 
         //Set up the layers that will be loaded in the map
-        layers: [Base],
+        layers: [BaseMap,BoC],
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
-            center: ol.proj.transform([-94.350243, 46.829781], 'EPSG:4326', 'EPSG:3857'),
-            zoom: 1
+            center: ol.proj.transform([35.2167, 31.7833], 'EPSG:4326', projection),
+            zoom: 8
         })
     });
 }
