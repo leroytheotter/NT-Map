@@ -50,7 +50,7 @@ function CreateLayers() {
 /**********************************************************/
 /*              Begin popup bubble scripting              */
 /**********************************************************/
-function PopUp_Box ()
+function PopUp_Box (evt)
 {
     /*var element = document.getElementById('popup');
 
