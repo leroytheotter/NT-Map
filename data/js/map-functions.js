@@ -33,9 +33,6 @@ function setup_map() {
     });
 }
 
-//Define the KML Layers
-var BoC;
-
 //Location selection function
 function LocationSelector(location)
 {
