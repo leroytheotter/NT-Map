@@ -157,10 +157,9 @@
                                 var coord = geometry.getCoordinates();
                                 popup.setPosition(coord);
                                 var displaycontent = ('<b>' + feature.get('name') + '</b>' + '<br>'
-                                    + '<img src="data/images/birth-of-jesus-christ-mormon.jpg" alt="Birth of Jesus Christ" height="160" width="250"'
-                                    + '<br>' + feature.get('description')
-                                    )
-                                };
+                                        + '<img src="data/images/birth-of-jesus-christ-mormon.jpg" alt="Birth of Jesus Christ" height="160" width="250"'
+                                        + '<br>' + feature.get('description')
+                                    );
                                 $(element).popover({
                                     'placement': 'top',
                                     'html': true,
