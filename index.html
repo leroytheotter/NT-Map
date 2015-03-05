@@ -156,7 +156,7 @@
                                 var geometry = feature.getGeometry();
                                 var coord = geometry.getCoordinates();
                                 popup.setPosition(coord);
-                                var displaycontent = '<b>' + feature.get('name') + '</b>' + '<br>' + '<br>' + feature.get('description');
+                                var displaycontent = '<b>' + feature.get('name') + '</b>' + '<br>' + '<img src="data/images/birth-of-jesus-christ-mormon.jpeg" alt="Birth of Jesus Christ" height="250" width="160"' + '<br>' + feature.get('description');
                                 $(element).popover({
                                     'placement': 'top',
                                     'html': true,
@@ -169,28 +169,6 @@
                                 $(element).popover('destroy');
                             }
                         });
-
-                        /*
-
-                        !!!!!!!!!!!!!--Delete This Code If Not Needed--!!!!!!!!!!!!!
-
-                        I'm not sure what this code does, except cause an erorr that also doesn't do anything,
-                        so if I can't find a reason to keep it then - off with its head
-
-                        // change mouse cursor when over marker
-
-
-                        map.on('pointermove', function(e) {
-                            if (e.dragging) {
-                                $(element).popover('destroy');
-                                return;
-                            }
-                            var pixel = map.getEventPixel(e.originalEvent);
-                            var hit = map.hasFeatureAtPixel(pixel);
-                            map.getTarget().style.cursor = hit ? 'pointer' : '';
-                        });
-                         */
-
 
 					</script>
 				
