@@ -45,7 +45,7 @@
 
 </head>
 
-<body onload="setup_map()";>
+<body onload="map=setup_map()";>
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -117,10 +117,10 @@
                                 projection: projection,
                                 url: 'data/kml/birthofchrist.kml'
                             })
-                        });*/
+                        });
 
                         //Declare the map object itself.
-                       /* var map = new ol.Map({
+                        var map = new ol.Map({
                             target: 'map',
 
                             //Set up the layers that will be loaded in the map
