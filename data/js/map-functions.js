@@ -84,6 +84,8 @@ function CreateMap() {
     });
     map.addOverlay(popup);
 
+    return map
+
 }
 
 /**********************************************************/
