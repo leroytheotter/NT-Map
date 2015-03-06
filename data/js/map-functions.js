@@ -150,3 +150,20 @@ function PopUp_Bubble(evt) {
 /**********************************************************/
 /*               End popup bubble scripting               */
 /**********************************************************/
+
+
+/**********************************************************/
+/*              Begin disable layers script               */
+/**********************************************************/
+
+function TurnAllLayersOff() {
+    //turn all the layers in the map off
+    layers = map.getLayers().a;
+    for (var i=1; i <= 16; i++) {
+        layers[i].setVisible(false);
+    }
+}
+
+/**********************************************************/
+/*               End disable layers script                */
+/**********************************************************/
