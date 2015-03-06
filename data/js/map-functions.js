@@ -45,3 +45,93 @@ function CreateLayers() {
 /**********************************************************/
 /*             End layer definition function              */
 /**********************************************************/
+
+
+
+/**********************************************************/
+/*                Begin map creation section              */
+/**********************************************************/
+
+function CreateMap() {
+
+    //Build the layer objects for each KML file
+    CreateLayers();
+
+    //Declare the map object itself.
+    map = new ol.Map({
+        target: 'map',
+
+        //Set up the layers that will be loaded in the map
+        layers: [BaseMap, BoC],
+
+        //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
+        view: new ol.View({
+            center: ol.proj.transform([35.2167, 31.7833], 'EPSG:4326', projection),
+            zoom: 8
+        })
+    });
+
+//Add some useful map controls
+    map.addControl(new ol.control.ScaleLine());
+
+}
+
+/**********************************************************/
+/*                End map creation section                */
+/**********************************************************/
+
+
+/**********************************************************/
+/*              Begin popup bubble scripting              */
+/**********************************************************/
+
+function PopUp_Bubble() {
+
+    var element = document.getElementById('popup');
+
+    var popup = new ol.Overlay({
+        element: element,
+        positioning: 'bottom-center',
+        stopEvent: false
+    });
+    map.addOverlay(popup);
+
+
+    // display popup on click
+
+    map.on('click', function (evt) {
+        //try to destroy it before doing anything else
+        $(element).popover('destroy');
+
+        //Try to get a feature at the point of interest
+        var feature = map.forEachFeatureAtPixel(evt.pixel,
+            function (feature, layer) {
+                return feature;
+            });
+
+        //if we found a feature then create and show the popup.
+        if (feature) {
+            var geometry = feature.getGeometry();
+            var coord = geometry.getCoordinates();
+            popup.setPosition(coord);
+            var displaycontent = ('<b>' + feature.get('name') + '</b>' + '<br>'
+            + '<br>' + feature.get('description')
+            );
+            $(element).popover({
+                'placement': 'top',
+                'html': true,
+                'content': displaycontent
+            });
+
+            $(element).popover('show');
+
+        } else {
+            $(element).popover('destroy');
+        }
+    });
+
+}
+
+/**********************************************************/
+/*               End popup bubble scripting               */
+/**********************************************************/
