@@ -99,6 +99,16 @@ function CreateMap() {
 
 function PopUp_Bubble() {
 
+    //Add Popup system
+    var element = document.getElementById('popup');
+
+    var popup = new ol.Overlay({
+        element: element,
+        positioning: 'bottom-center',
+        stopEvent: false
+    });
+    map.addOverlay(popup);
+
     // display popup on click
 
     //try to destroy it before doing anything else
