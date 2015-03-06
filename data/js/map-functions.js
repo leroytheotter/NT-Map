@@ -66,7 +66,7 @@ function LocationSelector(location)
     switch (location)
     {
         case "BoC":
-            TurnAllLayersOff(map);
+            TurnAllLayersOff();
             BoC.setVisible(true);
             zoom_area.setCenter(BoC);
             zoom_area.setZoom(13)
@@ -157,7 +157,7 @@ function PopUp_Bubble(evt) {
 /*              Begin disable layers script               */
 /**********************************************************/
 
-function TurnAllLayersOff(map) {
+function TurnAllLayersOff() {
     //turn all the layers in the map off
     var layers = map.getLayers().a;
     for (var i=1; i <= 16; i++) {
