@@ -68,7 +68,7 @@ function LocationSelector(location)
         case "BoC":
             TurnAllLayersOff();
             BoC.setVisible(true);
-            zoom_area.setCenter(BoC);
+            zoom_area.setCenter(BoC.getGeometry().getCoordinates());
             zoom_area.setZoom(13)
 
     }
