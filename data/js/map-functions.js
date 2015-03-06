@@ -97,7 +97,7 @@ function CreateMap() {
 /*              Begin popup bubble scripting              */
 /**********************************************************/
 
-function PopUp_Bubble() {
+function PopUp_Bubble(evt) {
 
     //Add Popup system
     var element = document.getElementById('popup');
