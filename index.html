@@ -41,8 +41,6 @@
     <!-- Here we link to the map functions script -->
     <script src="data/js/map-functions.js" type="text/javascript"></script>
 
-
-
 </head>
 
 <body>
@@ -84,7 +82,7 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Page Content -->
+    <!-- Map -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -113,7 +111,25 @@
             </div>
         </div>
     </div>
-    <!-- /.container -->
+    <!-- End Map -->
+
+
+    <!-- Controls -->
+    <div class="container">
+
+        <!-- Option box control-->
+        <form>
+
+            <select onchange="LocationSelector(this.value)">
+                <option value="all">All Events</option>
+                <option value="BoC">Birth of Christ</option>
+
+            </select>
+
+        </form>
+
+    </div>
+    <!-- End Controls -->
 
     <footer class="footer">
 

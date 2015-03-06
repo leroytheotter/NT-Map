@@ -14,10 +14,15 @@ var projection = ol.proj.get('EPSG:3857');
 /**********************************************************/
 function LocationSelector(location)
 {
+    var zoom_area = map.getview();
+
     switch (location)
     {
         case "BoC":
-
+            TurnAllLayersOff();
+            BoC.setVisible(true);
+            zoom_area.setCenter(BoC);
+            zoom_area.setZoom(13)
 
     }
 }
