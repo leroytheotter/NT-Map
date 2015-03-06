@@ -158,7 +158,7 @@ function PopUp_Bubble(evt) {
 
 function TurnAllLayersOff() {
     //turn all the layers in the map off
-    layers = map.getLayers().a;
+    var layers = map.getLayers().a;
     for (var i=1; i <= 16; i++) {
         layers[i].setVisible(false);
     }
