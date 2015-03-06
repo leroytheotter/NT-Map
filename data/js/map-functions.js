@@ -140,7 +140,6 @@ function PopUp_Bubble(evt) {
         $(element).popover('destroy');
     }
 
-
 }
 
 /**********************************************************/
