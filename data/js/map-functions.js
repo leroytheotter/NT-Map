@@ -9,48 +9,6 @@ var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, WoW, Geth, Ca
 //Define the default map projection
 var projection = ol.proj.get('EPSG:3857');
 
-/**********************************************************/
-/*             Begin location selection function          */
-/**********************************************************/
-function LocationSelector(location)
-{
-    var zoom_area = map.getView();
-
-    switch (location)
-    {
-        case "BoC":
-            TurnAllLayersOff();
-            BoC.setVisible(true);
-            zoom_area.setCenter(BoC);
-            zoom_area.setZoom(13)
-
-    }
-}
-/**********************************************************/
-/*             End location selection function            */
-/**********************************************************/
-
-
-/**********************************************************/
-/*             Begin layer definition function            */
-/**********************************************************/
-function CreateLayers() {
-    BaseMap = new ol.layer.Tile({
-        source: new ol.source.MapQuest({layer: 'osm'})
-    });
-
-    BoC = new ol.layer.Vector({
-        source: new ol.source.KML({
-            projection: projection,
-            url: 'data/kml/birthofchrist.kml'
-        })
-    })
-
-}
-/**********************************************************/
-/*             End layer definition function              */
-/**********************************************************/
-
 
 
 /**********************************************************/
@@ -95,6 +53,49 @@ function CreateMap() {
 
 /**********************************************************/
 /*                End map creation section                */
+/**********************************************************/
+
+
+/**********************************************************/
+/*             Begin location selection function          */
+/**********************************************************/
+function LocationSelector(location)
+{
+    var zoom_area = map.getView();
+
+    switch (location)
+    {
+        case "BoC":
+            TurnAllLayersOff();
+            BoC.setVisible(true);
+            zoom_area.setCenter(BoC);
+            zoom_area.setZoom(13)
+
+    }
+}
+/**********************************************************/
+/*             End location selection function            */
+/**********************************************************/
+
+
+/**********************************************************/
+/*             Begin layer definition function            */
+/**********************************************************/
+function CreateLayers() {
+    BaseMap = new ol.layer.Tile({
+        source: new ol.source.MapQuest({layer: 'osm'})
+    });
+
+    BoC = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/birthofchrist.kml'
+        })
+    })
+
+}
+/**********************************************************/
+/*             End layer definition function              */
 /**********************************************************/
 
 
