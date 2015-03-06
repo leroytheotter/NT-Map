@@ -14,7 +14,7 @@ var projection = ol.proj.get('EPSG:3857');
 /**********************************************************/
 function LocationSelector(location)
 {
-    var zoom_area = map.getview();
+    var zoom_area = map.getView();
 
     switch (location)
     {
