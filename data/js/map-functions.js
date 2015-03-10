@@ -73,6 +73,8 @@ function LocationSelector(location)
             break;
 
         case "all":
+            TurnAllLayersOff();
+
             //Show all locations
             var layers = map.getLayers().a;
             for (var i=1; i <= (layers.length); i++) {
@@ -182,11 +184,18 @@ function PopUp_Bubble(evt) {
 function TurnAllLayersOff() {
     //turn all the layers in the map off
     var layers = map.getLayers().a;
-    for (var i=1; i <= (layers.length); i++) {
+    for (var i = 1; i <= (layers.length); i++) {
         if (typeof layers[i] !== 'undefined') {
             layers[i].setVisible(false);
         }
     }
+
+    //Add Popup system
+    var element = document.getElementById('popup');
+
+    //try to destroy it before doing anything else
+    $(element).popover('destroy');
+
 }
 
 /**********************************************************/
