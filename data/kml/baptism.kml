@@ -2,31 +2,31 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <Placemark>
-      <name>Birth of Christ</name>
+      <name>Jesus is baptized</name>
       <description>
         <![CDATA[
 			<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100;border-collapse:collapse;padding:3px 3px 3px 3px">
 			<img src="data/images/birth-of-jesus-christ-mormon.jpg" alt="Birth of Jesus Christ" width="250"><br>
 			<tr><td><b>Date</b></td>
-			<td>6 BC</td></tr>
+			<td>28 or 29 AD</td></tr>
 			<tr><td><b>Location</b></td>
-			<td>Bethlehem</td></tr>
+			<td>Jordan River</td></tr>
 			<tr><td><b>Scriptoral Reference</b></td>
-			<td><a href="https://www.lds.org/scriptures/nt/luke/2.4-7?lang=eng#3">Luke 2:4-7</a></td></tr>
+			<td><a href="https://www.lds.org/scriptures/nt/mark/1.9-11?lang=eng#3">Mark 1:9-11</a></td></tr>
 			<tr><td><b>Description</b></td>
-			<td>Christ is born in a humble manger</td></tr>
-			<tr><td><b>Source</b></td>
-			<td><a href="http://whc.unesco.org/en/list/1433">Church of the Nativity</a></td></tr>
+			<td>Jesus is baptized by John the Baptist in the Jordan River</td></tr>
+			<tr><td><b>Modern Location</b></td>
+			<td><a href=""http://www.baptismsite.com/index.php/the-place-where-jesus-was-baptized.html">The Baptismal Site (Bethany beyond the Jordan)</a></td></tr>
         ]]>
       </description>
 	  <styleUrl>#Icon</styleUrl>
       <Point>
-        <coordinates>35.207538,31.704301</coordinates>
+        <coordinates>31.836972,35.54675</coordinates>
       </Point>
     </Placemark>
 	<Style id="Icon">
     <IconStyle>
-      <Icon><href>data/icons/birthofchrist.png</href></Icon>
+      <Icon><href>data/icons/baptism.png</href></Icon>
       <scale>0.15</scale>
     </IconStyle>
   </Style>
