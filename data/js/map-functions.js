@@ -65,14 +65,36 @@ function LocationSelector(location)
 
     switch (location)
     {
+        case "None":
+            //Hide all locations
+            TurnAllLayersOff();
+            map.getView().setCenter(ol.proj.transform([35.2167, 31.7833], 'EPSG:4326', projection));
+            map.getView().setZoom(8);
+            break;
+
+        case "all":
+            //Show all locations
+            var layers = map.getLayers().a;
+            for (var i=1; i <= (layers.length); i++) {
+                if (typeof layers[i] !== 'undefined') {
+                    layers[i].setVisible(true);
+                }
+            }
+            map.getView().setCenter(ol.proj.transform([35.2167, 31.7833], 'EPSG:4326', projection));
+            map.getView().setZoom(8);
+            break;
+
         case "BoC":
+            //Show only Birth of Christ
             TurnAllLayersOff();
             BoC.setVisible(true);
-            zoom_area.setCenter(BoC.getCoordinates());
-            zoom_area.setZoom(13)
+            map.getView().setCenter(BoC.getSource().getFeatures()[0].getGeometry().getCoordinates());
+            map.getView().setZoom(13);
+            break;
 
     }
 }
+
 /**********************************************************/
 /*             End location selection function            */
 /**********************************************************/
@@ -160,8 +182,10 @@ function PopUp_Bubble(evt) {
 function TurnAllLayersOff() {
     //turn all the layers in the map off
     var layers = map.getLayers().a;
-    for (var i=1; i <= (layers.length - 1); i++) {
-        layers[i].setVisible(false);
+    for (var i=1; i <= (layers.length); i++) {
+        if (typeof layers[i] !== 'undefined') {
+            layers[i].setVisible(false);
+        }
     }
 }
 
