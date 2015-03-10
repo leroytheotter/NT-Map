@@ -25,7 +25,7 @@ function CreateMap() {
         target: 'map',
 
         //Set up the layers that will be loaded in the map
-        layers: [BaseMap, BoC, Temple, Nazareth, Bapt],
+        layers: [BaseMap, BoC, Temple, Nazareth, Bapt, NazBeth],
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
@@ -153,6 +153,18 @@ function LocationSelector(location)
             map.getView().setCenter(center);
             map.getView().setZoom(13);
             PopUp_FromFeature(Bapt.getSource().getFeatures()[0]);
+            break;
+
+        case "NazBeth":
+            //Show baptism at river Jordan
+            NazBeth.setVisible(true);
+            var Coord = NazBeth.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
+            map.getView().setZoom(13);
+            PopUp_FromFeature(NazBeth.getSource().getFeatures()[0]);
             break;
 
     }
