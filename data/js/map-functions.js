@@ -25,7 +25,7 @@ function CreateMap() {
         target: 'map',
 
         //Set up the layers that will be loaded in the map
-        layers: [BaseMap, BoC],
+        layers: [BaseMap, BoC, Temple, Nazareth],
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
@@ -92,6 +92,7 @@ function LocationSelector(location)
             BoC.setVisible(true);
             map.getView().setCenter(BoC.getSource().getFeatures()[0].getGeometry().getCoordinates());
             map.getView().setZoom(13);
+            //PopUp_Bubble(BoC.getSource().getFeatures()[0].getGeometry().getCoordinates());
             break;
 
         case "Temple":
@@ -99,6 +100,14 @@ function LocationSelector(location)
             TurnAllLayersOff();
             Temple.setVisible(true);
             map.getView().setCenter(Temple.getSource().getFeatures()[0].getGeometry().getCoordinates());
+            map.getView().setZoom(13);
+            break;
+
+        case "Nazareth":
+            //Show only Birth of Christ
+            TurnAllLayersOff();
+            Nazareth.setVisible(true);
+            map.getView().setCenter(Nazareth.getSource().getFeatures()[0].getGeometry().getCoordinates());
             map.getView().setZoom(13);
             break;
 
@@ -114,6 +123,7 @@ function LocationSelector(location)
 /*             Begin layer definition function            */
 /**********************************************************/
 function CreateLayers() {
+
     BaseMap = new ol.layer.Tile({
         source: new ol.source.MapQuest({layer: 'osm'})
     });
@@ -130,7 +140,14 @@ function CreateLayers() {
             projection: projection,
             url: 'data/kml/temple.kml'
         })
-    })
+    });
+
+    Nazareth = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/Nazareth.kml'
+        })
+    });
 
 }
 /**********************************************************/
