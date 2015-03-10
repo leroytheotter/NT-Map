@@ -25,7 +25,7 @@ function CreateMap() {
         target: 'map',
 
         //Set up the layers that will be loaded in the map
-        layers: [BaseMap, BoC, Temple, Nazareth],
+        layers: [BaseMap, BoC, Temple, Nazareth, Bapt],
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
@@ -111,6 +111,14 @@ function LocationSelector(location)
             map.getView().setZoom(13);
             break;
 
+        case "Bapt":
+            //Show only Birth of Christ
+            TurnAllLayersOff();
+            Bapt.setVisible(true);
+            map.getView().setCenter(Bapt.getSource().getFeatures()[0].getGeometry().getCoordinates());
+            map.getView().setZoom(13);
+            break;
+
     }
 }
 
@@ -149,6 +157,12 @@ function CreateLayers() {
         })
     });
 
+    Bapt = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/baptism.kml'
+        })
+    });
 }
 /**********************************************************/
 /*             End layer definition function              */
