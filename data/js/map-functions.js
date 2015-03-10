@@ -96,7 +96,7 @@ function LocationSelector(location)
             break;
 
         case "Temple":
-            //Show only Birth of Christ
+            //Show only Christ at the Temple
             TurnAllLayersOff();
             Temple.setVisible(true);
             map.getView().setCenter(Temple.getSource().getFeatures()[0].getGeometry().getCoordinates());
@@ -104,7 +104,7 @@ function LocationSelector(location)
             break;
 
         case "Nazareth":
-            //Show only Birth of Christ
+            //Show only Nazareth
             TurnAllLayersOff();
             Nazareth.setVisible(true);
             map.getView().setCenter(Nazareth.getSource().getFeatures()[0].getGeometry().getCoordinates());
@@ -112,7 +112,7 @@ function LocationSelector(location)
             break;
 
         case "Bapt":
-            //Show only Birth of Christ
+            //Show baptism at river Jordan
             TurnAllLayersOff();
             Bapt.setVisible(true);
             map.getView().setCenter(Bapt.getSource().getFeatures()[0].getGeometry().getCoordinates());
