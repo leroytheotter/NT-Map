@@ -90,9 +90,13 @@ function LocationSelector(location)
             //Show only Birth of Christ
             TurnAllLayersOff();
             BoC.setVisible(true);
-            map.getView().setCenter(BoC.getSource().getFeatures()[0].getGeometry().getCoordinates());
+            var Coord = BoC.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0-0.5,y0];
+            map.getView().setCenter(center);
             map.getView().setZoom(13);
-            //PopUp_Bubble(BoC.getSource().getFeatures()[0].getGeometry().getCoordinates());
+            PopUp_FromFeature(BoC.getSource().getFeatures()[0]);
             break;
 
         case "Temple":
@@ -174,6 +178,17 @@ function CreateLayers() {
 /**********************************************************/
 
 function PopUp_Bubble(evt) {
+    // Convert On-Click event to a feature for pass though to the main popup script
+
+    var feature = map.forEachFeatureAtPixel(evt.pixel,
+        function(feature, layer) {
+            return feature;
+        });
+
+    PopUp_FromFeature(feature)
+}
+
+function PopUp_FromFeature(feature){
 
     //Add Popup system
     var element = document.getElementById('popup');
@@ -189,12 +204,6 @@ function PopUp_Bubble(evt) {
 
     //try to destroy it before doing anything else
     $(element).popover('destroy');
-
-    //Try to get a feature at the point of interest
-    var feature = map.forEachFeatureAtPixel(evt.pixel,
-        function (feature, layer) {
-            return feature;
-        });
 
     //if we found a feature then create and show the popup.
     if (feature) {
