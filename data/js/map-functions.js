@@ -159,11 +159,11 @@ function LocationSelector(location)
             //Show baptism at river Jordan
             NazBeth.setVisible(true);
             var Coord = NazBeth.getSource().getFeatures()[0].getGeometry().getCoordinates();
-            var x0 = Coord[0];
+            /*var x0 = Coord[0];
             var y0 = Coord[1];
-            var center = [x0,y0+2500];
-            map.getView().setCenter(center);
-            map.getView().setZoom(13);
+            var center = [x0,y0+2500];*/
+            map.getView().setCenter(Coord);
+            map.getView().setZoom(9);
             PopUp_FromFeature(NazBeth.getSource().getFeatures()[0]);
             break;
 
