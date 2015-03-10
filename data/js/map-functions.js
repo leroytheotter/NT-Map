@@ -94,6 +94,14 @@ function LocationSelector(location)
             map.getView().setZoom(13);
             break;
 
+        case "Temple":
+            //Show only Birth of Christ
+            TurnAllLayersOff();
+            Temple.setVisible(true);
+            map.getView().setCenter(Temple.getSource().getFeatures()[0].getGeometry().getCoordinates());
+            map.getView().setZoom(13);
+            break;
+
     }
 }
 
@@ -114,6 +122,13 @@ function CreateLayers() {
         source: new ol.source.KML({
             projection: projection,
             url: 'data/kml/birthofchrist.kml'
+        })
+    })
+
+    Temple = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/temple.kml'
         })
     })
 
