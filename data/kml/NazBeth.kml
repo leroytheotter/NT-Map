@@ -28,10 +28,15 @@
       </LineString>
     </Placemark>
 	<Style id="Icon">
-    <IconStyle>
-      <Icon><href>data/icons/nazbeth.png</href></Icon>
-      <scale>0.15</scale>
-    </IconStyle>
+    <Style id="yellowLineGreenPoly">
+      <LineStyle>
+        <color>7f00ffff</color>
+        <width>4</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7f00ff00</color>
+      </PolyStyle>
+    </Style>
   </Style>
   </Document>
 </kml>
