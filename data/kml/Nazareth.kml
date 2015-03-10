@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Jesus spends 20 years in Nazareth</name>
+      <description>
+        <![CDATA[
+			<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100;border-collapse:collapse;padding:3px 3px 3px 3px">
+			<img src="data/images/birth-of-jesus-christ-mormon.jpg" alt="Birth of Jesus Christ" width="250"><br>
+			<tr><td><b>Date</b></td>
+			<td>6 BC</td></tr>
+			<tr><td><b>Location</b></td>
+			<td>Nazareth</td></tr>
+			<tr><td><b>Scriptoral Reference</b></td>
+			<td><a href="https://www.lds.org/scriptures/nt/luke/2.4-7?lang=eng#3">Luke 2:4-7</a></td></tr>
+			<tr><td><b>Description</b></td>
+			<td>Jesus follows in his father's footsteps as a carpenter</td></tr>
+        ]]>
+      </description>
+	  <styleUrl>#Icon</styleUrl>
+      <Point>
+        <coordinates>35.303333,32.701944</coordinates>
+      </Point>
+    </Placemark>
+	<Style id="Icon">
+    <IconStyle>
+      <Icon><href>data/icons/birthofchrist.png</href></Icon>
+      <scale>0.25</scale>
+    </IconStyle>
+  </Style>
+  </Document>
+</kml>
