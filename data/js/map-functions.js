@@ -211,6 +211,13 @@ function CreateLayers() {
             url: 'data/kml/baptism.kml'
         })
     });
+
+    NazBeth = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/NazBeth.kml'
+        })
+    });
 }
 /**********************************************************/
 /*             End layer definition function              */
