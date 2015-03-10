@@ -24,7 +24,7 @@
     </Placemark>
 	<Style id="Icon">
     <IconStyle>
-      <Icon><href>data/icons/birthofchrist.png</href></Icon>
+      <Icon><href>data/icons/temple.png</href></Icon>
       <scale>0.25</scale>
     </IconStyle>
   </Style>
