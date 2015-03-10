@@ -123,7 +123,7 @@ function CreateLayers() {
             projection: projection,
             url: 'data/kml/birthofchrist.kml'
         })
-    })
+    });
 
     Temple = new ol.layer.Vector({
         source: new ol.source.KML({
