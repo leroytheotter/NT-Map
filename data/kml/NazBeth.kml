@@ -30,8 +30,8 @@
 	<Style id="Icon">
     <Style id="yellowLineGreenPoly">
       <LineStyle>
-        <color>7f00ffff</color>
-        <width>4</width>
+        <color>7f00ff6f</color>
+        <width>7</width>
       </LineStyle>
       <PolyStyle>
         <color>7f00ff00</color>
