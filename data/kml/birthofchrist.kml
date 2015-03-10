@@ -27,7 +27,7 @@
 	<Style id="Icon">
     <IconStyle>
       <Icon><href>data/icons/birthofchrist.png</href></Icon>
-      <scale>0.25</scale>
+      <scale>0.15</scale>
     </IconStyle>
   </Style>
   </Document>
