@@ -68,12 +68,23 @@ function LocationSelector(location)
         case "None":
             //Hide all locations
             TurnAllLayersOff();
+            //Add Popup system
+            var element = document.getElementById('popup');
+
+            //try to destroy it before doing anything else
+            $(element).popover('destroy');
+
             map.getView().setCenter(ol.proj.transform([35.2167, 31.7833], 'EPSG:4326', projection));
             map.getView().setZoom(8);
             break;
 
         case "all":
             TurnAllLayersOff();
+            //Add Popup system
+             var element = document.getElementById('popup');
+
+            //try to destroy it before doing anything else
+            $(element).popover('destroy');
 
             //Show all locations
             var layers = map.getLayers().a;
@@ -88,39 +99,60 @@ function LocationSelector(location)
 
         case "BoC":
             //Show only Birth of Christ
+
+            LocationSelector('none');
+
             TurnAllLayersOff();
             BoC.setVisible(true);
             var Coord = BoC.getSource().getFeatures()[0].getGeometry().getCoordinates();
             var x0 = Coord[0];
             var y0 = Coord[1];
-            var center = [x0-0.5,y0];
+            var center = [x0,y0+2500];
             map.getView().setCenter(center);
             map.getView().setZoom(13);
-            PopUp_FromFeature(BoC.getSource().getFeatures()[0]);
+            setTimeout(PopUp_FromFeature(BoC.getSource().getFeatures()[0]),500);
             break;
+
 
         case "Temple":
             //Show only Christ at the Temple
+
+            LocationSelector('none');
+
             TurnAllLayersOff();
             Temple.setVisible(true);
-            map.getView().setCenter(Temple.getSource().getFeatures()[0].getGeometry().getCoordinates());
+            var Coord = Temple.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
             map.getView().setZoom(13);
+            setTimeout(PopUp_FromFeature(Temple.getSource().getFeatures()[0]),500);
             break;
 
         case "Nazareth":
             //Show only Nazareth
             TurnAllLayersOff();
             Nazareth.setVisible(true);
-            map.getView().setCenter(Nazareth.getSource().getFeatures()[0].getGeometry().getCoordinates());
+            var Coord = Nazareth.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
             map.getView().setZoom(13);
+            PopUp_FromFeature(Nazareth.getSource().getFeatures()[0]);
             break;
 
         case "Bapt":
             //Show baptism at river Jordan
-            TurnAllLayersOff();
             Bapt.setVisible(true);
-            map.getView().setCenter(Bapt.getSource().getFeatures()[0].getGeometry().getCoordinates());
+            var Coord = Bapt.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
             map.getView().setZoom(13);
+            PopUp_FromFeature(Bapt.getSource().getFeatures()[0]);
             break;
 
     }
@@ -222,7 +254,7 @@ function PopUp_FromFeature(feature){
         $(element).popover('show');
 
     } else {
-        $(element).popover('destroy');
+        //$(element).popover('destroy');
     }
 
 }
