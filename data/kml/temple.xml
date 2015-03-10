@@ -2,31 +2,31 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <Placemark>
-      <name>Birth of Christ</name>
+      <name>12 year old Jesus travels from Nazareth to Jerusalem and stays behind in the Temple</name>
       <description>
         <![CDATA[
 			<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100;border-collapse:collapse;padding:3px 3px 3px 3px">
-			<img src="data/images/birth-of-jesus-christ-mormon.jpg" alt="Birth of Jesus Christ" width="250"><br>
+			<img src="data/images/boy-jesus.jpg" alt="Jesus teaching at the temple" width="250"><br>
 			<tr><td><b>Date</b></td>
-			<td>6 BC</td></tr>
+			<td>6 AD</td></tr>
 			<tr><td><b>Location</b></td>
-			<td>Bethlehem</td></tr>
+			<td>Jerusalem</td></tr>
 			<tr><td><b>Scriptoral Reference</b></td>
-			<td><a href="https://www.lds.org/scriptures/nt/luke/2.4-7?lang=eng#3">Luke 2:4-7</a></td></tr>
+			<td><a href="https://www.lds.org/scriptures/nt/luke/2.41-46?lang=eng#3">Luke 2:41-46</a></td></tr>
 			<tr><td><b>Description</b></td>
-			<td>Christ is born in a humble manger</td></tr>
-			<tr><td><b>Source</b></td>
-			<td><a href="http://whc.unesco.org/en/list/1433">Church of the Nativity</a></td></tr>
+			<td>As a young boy Jesus stays to teach in the temple.</td></tr>
+			<!--<tr><td><b>Source</b></td>
+			<td><a href="http://whc.unesco.org/en/list/1433">Church of the Nativity</a></td></tr>-->
         ]]>
       </description>
 	  <styleUrl>#Icon</styleUrl>
       <Point>
-        <coordinates>35.207538,31.704301</coordinates>
+        <coordinates>35.235436,31.777994</coordinates>
       </Point>
     </Placemark>
 	<Style id="Icon">
     <IconStyle>
-      <Icon><href>data/icons/birthofchrist.png</href></Icon>
+      <Icon><href>data/icons/temple.jpg</href></Icon>
       <scale>0.25</scale>
     </IconStyle>
   </Style>
