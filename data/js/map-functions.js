@@ -99,9 +99,6 @@ function LocationSelector(location)
 
         case "BoC":
             //Show only Birth of Christ
-
-            LocationSelector('none');
-
             TurnAllLayersOff();
             BoC.setVisible(true);
             var Coord = BoC.getSource().getFeatures()[0].getGeometry().getCoordinates();
@@ -110,15 +107,12 @@ function LocationSelector(location)
             var center = [x0,y0+2500];
             map.getView().setCenter(center);
             map.getView().setZoom(13);
-            setTimeout(PopUp_FromFeature(BoC.getSource().getFeatures()[0]),500);
+            PopUp_FromFeature(BoC.getSource().getFeatures()[0]);
             break;
 
 
         case "Temple":
             //Show only Christ at the Temple
-
-            LocationSelector('none');
-
             TurnAllLayersOff();
             Temple.setVisible(true);
             var Coord = Temple.getSource().getFeatures()[0].getGeometry().getCoordinates();
@@ -127,7 +121,7 @@ function LocationSelector(location)
             var center = [x0,y0+2500];
             map.getView().setCenter(center);
             map.getView().setZoom(13);
-            setTimeout(PopUp_FromFeature(Temple.getSource().getFeatures()[0]),500);
+            PopUp_FromFeature(Temple.getSource().getFeatures()[0]);
             break;
 
         case "Nazareth":
@@ -145,6 +139,7 @@ function LocationSelector(location)
 
         case "Bapt":
             //Show baptism at river Jordan
+            TurnAllLayersOff();
             Bapt.setVisible(true);
             var Coord = Bapt.getSource().getFeatures()[0].getGeometry().getCoordinates();
             var x0 = Coord[0];
@@ -232,7 +227,7 @@ function PopUp_Bubble(evt) {
     // Convert On-Click event to a feature for pass though to the main popup script
 
     var feature = map.forEachFeatureAtPixel(evt.pixel,
-        function(feature, layer) {
+        function(feature) {
             return feature;
         });
 
@@ -254,7 +249,7 @@ function PopUp_FromFeature(feature){
     // display popup on click
 
     //try to destroy it before doing anything else
-    $(element).popover('destroy');
+    //$(element).popover('destroy');
 
     //if we found a feature then create and show the popup.
     if (feature) {
@@ -272,7 +267,8 @@ function PopUp_FromFeature(feature){
 
         $(element).popover('show');
 
-    } else {
+    }
+    else {
         $(element).popover('destroy');
     }
 
@@ -295,13 +291,6 @@ function TurnAllLayersOff() {
             layers[i].setVisible(false);
         }
     }
-
-    //Add Popup system
-    var element = document.getElementById('popup');
-
-    //try to destroy it before doing anything else
-    $(element).popover('destroy');
-
 }
 
 /**********************************************************/
