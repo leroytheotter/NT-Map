@@ -273,7 +273,7 @@ function PopUp_FromFeature(feature){
         $(element).popover('show');
 
     } else {
-        //$(element).popover('destroy');
+        $(element).popover('destroy');
     }
 
 }
