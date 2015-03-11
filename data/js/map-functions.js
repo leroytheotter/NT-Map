@@ -246,11 +246,6 @@ function PopUp_FromFeature(feature){
     });
     map.addOverlay(popup);
 
-    // display popup on click
-
-    //try to destroy it before doing anything else
-    //$(element).popover('destroy');
-
     //if we found a feature then create and show the popup.
     if (feature) {
         var geometry = feature.getGeometry();
