@@ -61,7 +61,6 @@ function CreateMap() {
 /**********************************************************/
 function LocationSelector(location)
 {
-    var zoom_area = map.getView();
 
     switch (location)
     {
@@ -151,14 +150,10 @@ function LocationSelector(location)
             break;
 
         case "NazBeth":
-            //Show baptism at river Jordan
+            //Show route from Nazareth to Bethlehem
             NazBeth.setVisible(true);
-            var Coord = NazBeth.getSource().getFeatures()[0].getGeometry().getCoordinates();
-            /*var x0 = Coord[0];
-            var y0 = Coord[1];
-            var center = [x0,y0+2500];*/
-            map.getView().setCenter(Coord);
-            map.getView().setZoom(9);
+            var extent = NazBeth.getSource().getExtent();
+            map.getView().fitExtent(extent, map.getSize());
             PopUp_FromFeature(NazBeth.getSource().getFeatures()[0]);
             break;
 
