@@ -95,8 +95,8 @@ function LocationSelector(location)
                     layers[i].setVisible(true);
                 }
             }
-            map.getView().setCenter(ol.proj.transform([35.2167, 31.7833], 'EPSG:4326', projection));
-            map.getView().setZoom(8);
+            map.getView().setCenter(ol.proj.transform([23.181152, 37.522797], 'EPSG:4326', projection));
+            map.getView().setZoom(4);
             break;
 
         case "BoC":
