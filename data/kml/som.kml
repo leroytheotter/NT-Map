@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Sermon on the Mount</name>
+      <description>
+        <![CDATA[
+			<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100;border-collapse:collapse;padding:3px 3px 3px 3px">
+			<img src="data/images/SoM.jpg" alt="Jesus gives Sermon on the Mount" width="250"><br>
+			<tr><td><b>Date</b></td>
+			<td>29 AD</td></tr>
+			<tr><td><b>Location</b></td>
+			<td>Sea of Galilee</td></tr>
+			<tr><td><b>Scriptoral Reference</b></td>
+			<td><a href="https://www.lds.org/scriptures/nt/matt/5?lang=eng">Mathew 5-7</a></td></tr>
+			<tr><td><b>Description</b></td>
+			<td>Christ preaches near the Sea of Galilee. His words are later called the Sermon on the Mount.</td></tr>
+        ]]>
+      </description>
+	  <styleUrl>#Icon</styleUrl>
+      <Point>
+        <coordinates>35.556017,32.88073</coordinates>
+      </Point>
+    </Placemark>
+	<Style id="Icon">
+    <IconStyle>
+      <Icon><href>data/icons/SoM.png</href></Icon>
+      <scale>0.5</scale>
+    </IconStyle>
+  </Style>
+  </Document>
+</kml>

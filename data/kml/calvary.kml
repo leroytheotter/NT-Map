@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Jesus Dies on the Cross</name>
+      <description>
+        <![CDATA[
+			<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100;border-collapse:collapse;padding:3px 3px 3px 3px">
+			<img src="data/images/Calvary.jpg" alt="Jesus gives life on the Cross" width="250"><br>
+			<tr><td><b>Date</b></td>
+			<td>30 AD</td></tr>
+			<tr><td><b>Location</b></td>
+			<td>Calvary Hill, Jerusalem</td></tr>
+			<tr><td><b>Scriptoral Reference</b></td>
+			<td><a href="https://www.lds.org/scriptures/nt/john/18?lang=eng">John 18-20</a></td></tr>
+			<tr><td><b>Description</b></td>
+			<td>Christ comletes the Atonement in giving his life on the Cross.</td></tr>
+        ]]>
+      </description>
+	  <styleUrl>#Icon</styleUrl>
+      <Point>
+        <coordinates>35.229444,31.778611</coordinates>
+      </Point>
+    </Placemark>
+	<Style id="Icon">
+    <IconStyle>
+      <Icon><href>data/icons/Calvary.png</href></Icon>
+      <scale>0.5</scale>
+    </IconStyle>
+  </Style>
+  </Document>
+</kml>

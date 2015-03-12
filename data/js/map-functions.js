@@ -25,7 +25,7 @@ function CreateMap() {
         target: 'map',
 
         //Set up the layers that will be loaded in the map
-        layers: [BaseMap, Satellite_Map, BoC, Temple, Nazareth, Bapt, NazBeth, Water, Feeds5000],
+        layers: [BaseMap, Satellite_Map, BoC, Temple, Nazareth, Bapt, NazBeth, Water, Feeds5000, BethEgypt, Wedding, SoM, Geth, Calvary, Rez],
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
@@ -197,6 +197,90 @@ function LocationSelector(location)
             map.getView().setZoom(13);
             PopUp_FromFeature(Feeds5000.getSource().getFeatures()[0]);
             break;
+			
+			case "BethEgypt":
+            //Show Path from beth to egypt
+            TurnAllLayersOff();
+            BethEgypt.setVisible(true);
+            //Set the view as an offset to provide room for the popup
+            var Coord = BethEgypt.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
+            map.getView().setZoom(13);
+            PopUp_FromFeature(BethEgypt.getSource().getFeatures()[0]);
+            break;
+			
+			case "Wedding":
+            //Show Cana Wedding
+            TurnAllLayersOff();
+            Wedding.setVisible(true);
+            //Set the view as an offset to provide room for the popup
+            var Coord = Wedding.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
+            map.getView().setZoom(13);
+            PopUp_FromFeature(Wedding.getSource().getFeatures()[0]);
+            break;
+			
+			case "SoM":
+            //Show SoM
+            TurnAllLayersOff();
+            SoM.setVisible(true);
+            //Set the view as an offset to provide room for the popup
+            var Coord = SoM.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
+            map.getView().setZoom(13);
+            PopUp_FromFeature(SoM.getSource().getFeatures()[0]);
+            break;
+			
+			case "Geth":
+            //Show Geth
+            TurnAllLayersOff();
+            Geth.setVisible(true);
+            //Set the view as an offset to provide room for the popup
+            var Coord = Geth.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
+            map.getView().setZoom(13);
+            PopUp_FromFeature(Geth.getSource().getFeatures()[0]);
+            break;
+			
+			case "Calvary":
+            //Show Calvary
+            TurnAllLayersOff();
+            Calvary.setVisible(true);
+            //Set the view as an offset to provide room for the popup
+            var Coord = Calvary.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
+            map.getView().setZoom(13);
+            PopUp_FromFeature(Calvary.getSource().getFeatures()[0]);
+            break;
+			
+			case "Rez":
+            //Show Rez
+            TurnAllLayersOff();
+            Rez.setVisible(true);
+            //Set the view as an offset to provide room for the popup
+            var Coord = Rez.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
+            map.getView().setZoom(13);
+            PopUp_FromFeature(Rez.getSource().getFeatures()[0]);
+            break;
     }
 }
 
@@ -270,6 +354,43 @@ function CreateLayers() {
         source: new ol.source.KML({
             projection: projection,
             url: 'data/kml/feeds5000.kml'
+        })
+    });
+	
+	BethEgypt = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/bethegypt.kml'
+        })
+    });
+	Wedding = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/wedding.kml'
+        })
+    });
+	SoM = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/som.kml'
+        })
+    });
+	Geth = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/geth.kml'
+        })
+    });
+	Calvary = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/calvary.kml'
+        })
+    });
+	Rez = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/rez.kml'
         })
     });
 }

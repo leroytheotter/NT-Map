@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Jesus suffer in Gethsemane</name>
+      <description>
+        <![CDATA[
+			<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100;border-collapse:collapse;padding:3px 3px 3px 3px">
+			<img src="data/images/Geth.jpg" alt="Jesus pays for our sins" width="250"><br>
+			<tr><td><b>Date</b></td>
+			<td>30 AD</td></tr>
+			<tr><td><b>Location</b></td>
+			<td>Mount of Olives</td></tr>
+			<tr><td><b>Scriptoral Reference</b></td>
+			<td><a href="https://www.lds.org/scriptures/nt/matt/26?lang=eng">Mathew 26</a></td></tr>
+			<tr><td><b>Description</b></td>
+			<td>Christ performs the Atonement by suffering for our sins as well as our sufferings.</td></tr>
+        ]]>
+      </description>
+	  <styleUrl>#Icon</styleUrl>
+      <Point>
+        <coordinates>35.229444,31.779417</coordinates>
+      </Point>
+    </Placemark>
+	<Style id="Icon">
+    <IconStyle>
+      <Icon><href>data/icons/Geth.png</href></Icon>
+      <scale>0.5</scale>
+    </IconStyle>
+  </Style>
+  </Document>
+</kml>
