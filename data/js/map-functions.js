@@ -4,7 +4,7 @@
 
 //Define mpa layer variables
 var map,BaseMap;
-var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, Water, Geth, Calvary, Rez;
+var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, Water, Geth, Calvary, Rez, Feeds5000;
 
 //Define the default map projection
 var projection = ol.proj.get('EPSG:3857');
@@ -25,7 +25,7 @@ function CreateMap() {
         target: 'map',
 
         //Set up the layers that will be loaded in the map
-        layers: [BaseMap, BoC, Temple, Nazareth, Bapt, NazBeth, Water],
+        layers: [BaseMap, BoC, Temple, Nazareth, Bapt, NazBeth, Water, Feeds5000],
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
@@ -166,6 +166,15 @@ function LocationSelector(location)
             map.getView().fitExtent(extent, map.getSize());
             PopUp_FromFeature(Water.getSource().getFeatures()[0]);
             break;
+			
+		case "Feeds5000":
+            //Show Christ feeds 5000
+            TurnAllLayersOff();
+            Feeds5000.setVisible(true);
+            var extent = Feeds5000.getSource().getExtent();
+            map.getView().fitExtent(extent, map.getSize());
+            PopUp_FromFeature(Feeds5000.getSource().getFeatures()[0]);
+            break;
     }
 }
 
@@ -222,6 +231,13 @@ function CreateLayers() {
         source: new ol.source.KML({
             projection: projection,
             url: 'data/kml/walkwater.kml'
+        })
+    });
+	
+    Feeds5000 = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/feeds5000.kml'
         })
     });
 }
