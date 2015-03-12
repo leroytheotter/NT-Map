@@ -17,7 +17,7 @@
 			<td>JMary and Joseph return to the hometown of Joseph. 80 miles/129 km</td></tr>
         ]]>
       </description>
-	  <styleUrl>#Icon</styleUrl>
+	  <styleUrl>#yellowLineGreenPoly</styleUrl>
       <LineString>
         <extrude>1</extrude>
         <tessellate>1</tessellate>
@@ -27,8 +27,7 @@
 		</coordinates>
       </LineString>
     </Placemark>
-	<Style id="Icon">
-    <Style id="yellowLineGreenPoly">
+	<Style id="yellowLineGreenPoly">
       <LineStyle>
         <color>7f00ff6f</color>
         <width>7</width>
@@ -37,6 +36,5 @@
         <color>7f00ff00</color>
       </PolyStyle>
     </Style>
-  </Style>
-  </Document>
+   </Document>
 </kml>
