@@ -3,7 +3,7 @@
  */
 
 //Define mpa layer variables
-var map,BaseMap;
+var map,BaseMap,Satellite_Map;
 var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, Water, Geth, Calvary, Rez, Feeds5000;
 
 //Define the default map projection
@@ -25,7 +25,7 @@ function CreateMap() {
         target: 'map',
 
         //Set up the layers that will be loaded in the map
-        layers: [BaseMap, BoC, Temple, Nazareth, Bapt, NazBeth, Water, Feeds5000],
+        layers: [BaseMap, Satellite_Map, BoC, Temple, Nazareth, Bapt, NazBeth, Water, Feeds5000],
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
@@ -87,7 +87,7 @@ function LocationSelector(location)
 
             //Show all locations
             var layers = map.getLayers().a;
-            for (var i=1; i <= (layers.length); i++) {
+            for (var i=2; i <= (layers.length); i++) {
                 if (typeof layers[i] !== 'undefined') {
                     layers[i].setVisible(true);
                 }
@@ -209,6 +209,19 @@ function CreateLayers() {
 
     BaseMap = new ol.layer.Tile({
         source: new ol.source.MapQuest({layer: 'osm'})
+    });
+
+    Satellite_Map = new ol.layer.Group({
+        style: 'AerialWithLabels',
+        visible: false,
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.MapQuest({layer: 'sat'})
+            }),
+            new ol.layer.Tile({
+                source: new ol.source.MapQuest({layer: 'hyb'})
+            })
+        ]
     });
 
     BoC = new ol.layer.Vector({
@@ -373,7 +386,7 @@ function PopUp_FromCoord(coord, feature){
 function TurnAllLayersOff() {
     //turn all the layers in the map off
     var layers = map.getLayers().a;
-    for (var i = 1; i <= (layers.length); i++) {
+    for (var i = 2; i <= (layers.length); i++) {
         if (typeof layers[i] !== 'undefined') {
             layers[i].setVisible(false);
         }
@@ -382,4 +395,33 @@ function TurnAllLayersOff() {
 
 /**********************************************************/
 /*               End disable layers script                */
+/**********************************************************/
+
+
+/**********************************************************/
+/*             Begin basemap swapping script              */
+/**********************************************************/
+
+function BaseSelector(MapType) {
+
+    switch (MapType) {
+
+        case 'sat': {
+            BaseMap.setVisible(false);
+            Satellite_Map.setVisible(true);
+            break;
+        }
+
+        case 'base': {
+            BaseMap.setVisible(true);
+            Satellite_Map.setVisible(false);
+            break;
+        }
+
+    }
+
+}
+
+/**********************************************************/
+/*              End basemap swapping script               */
 /**********************************************************/
