@@ -151,6 +151,7 @@ function LocationSelector(location)
 
         case "NazBeth":
             //Show route from Nazareth to Bethlehem
+            TurnAllLayersOff();
             NazBeth.setVisible(true);
             var extent = NazBeth.getSource().getExtent();
             map.getView().fitExtent(extent, map.getSize());
@@ -159,6 +160,7 @@ function LocationSelector(location)
 
 		case "Water":
             //Show Christ walks on Water
+            TurnAllLayersOff();
             Water.setVisible(true);
             var extent = Water.getSource().getExtent();
             map.getView().fitExtent(extent, map.getSize());
