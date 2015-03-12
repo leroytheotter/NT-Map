@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Christ Walks on Water</name>
+      <description>
+        <![CDATA[
+			<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100;border-collapse:collapse;padding:3px 3px 3px 3px">
+			<img src="data/images/jesus-walks-on-water.jpg" alt="Jesus walks on water" width="250"><br>
+			<tr><td><b>Date</b></td>
+			<td>29 AD</td></tr>
+			<tr><td><b>Location</b></td>
+			<td>Sea of Galilee</td></tr>
+			<tr><td><b>Scriptoral Reference</b></td>
+			<td><a href="https://www.lds.org/scriptures/nt/matt/14.22%20-%2033?lang=eng">Mathew 14:22-33</a></td></tr>
+			<tr><td><b>Description</b></td>
+			<td>Christ walks on water on the Sea of Galilee. Peter walks to him but lacks faith.</td></tr>
+        ]]>
+      </description>
+	  <styleUrl>#Icon</styleUrl>
+      <Point>
+        <coordinates>35.583333,32.833333</coordinates>
+      </Point>
+    </Placemark>
+	<Style id="Icon">
+    <IconStyle>
+      <Icon><href>data/icons/water.png</href></Icon>
+      <scale>0.15</scale>
+    </IconStyle>
+  </Style>
+  </Document>
+</kml>
