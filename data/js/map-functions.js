@@ -47,6 +47,9 @@ function CreateMap() {
     });
     map.addOverlay(popup);
 
+    //Hide Satellite Map initially
+    Satellite_Map.setVisible(false);
+
     return map
 
 }
@@ -208,20 +211,17 @@ function LocationSelector(location)
 function CreateLayers() {
 
     BaseMap = new ol.layer.Tile({
-        source: new ol.source.MapQuest({layer: 'osm'})
+        source: new ol.source.BingMaps({
+            imagerySet: 'Road',
+            key: 'Am7kzQ6OrBRMX9P5HZTzweMUnOqRupXzC1Is5S8Ix4DZH13m2ULfO2KMnaxv4O5-'
+        })
     });
 
-    Satellite_Map = new ol.layer.Group({
-        style: 'AerialWithLabels',
-        visible: false,
-        layers: [
-            new ol.layer.Tile({
-                source: new ol.source.MapQuest({layer: 'sat'})
-            }),
-            new ol.layer.Tile({
-                source: new ol.source.MapQuest({layer: 'hyb'})
-            })
-        ]
+    Satellite_Map = new ol.layer.Tile({
+        source: new ol.source.BingMaps({
+            imagerySet: 'AerialWithLabels',
+            key: 'Am7kzQ6OrBRMX9P5HZTzweMUnOqRupXzC1Is5S8Ix4DZH13m2ULfO2KMnaxv4O5-'
+        })
     });
 
     BoC = new ol.layer.Vector({
@@ -296,7 +296,7 @@ function PopUp_Bubble(evt) {
 
     //Try to get a feature at the point of interest
     var feature = map.forEachFeatureAtPixel(evt.pixel,
-        function(feature, layer) {
+        function(feature) {
             return feature;
         });
 
