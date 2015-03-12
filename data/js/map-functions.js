@@ -355,7 +355,7 @@ function PopUp_FromCoord(coord, feature){
     var popup = new ol.Overlay({
         element: element,
         positioning: 'bottom-center',
-        stopEvent: true
+        stopEvent: false
     });
     map.addOverlay(popup);
 
@@ -371,7 +371,6 @@ function PopUp_FromCoord(coord, feature){
     });
 
     $(element).popover('show');
-
 
 }
 
