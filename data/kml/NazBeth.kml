@@ -29,8 +29,8 @@
     </Placemark>
 	<Style id="yellowLineGreenPoly">
       <LineStyle>
-        <color>7f00ff6f</color>
-        <width>7</width>
+        <color>64B48C14</color>
+        <width>5</width>
       </LineStyle>
       <PolyStyle>
         <color>7f00ff00</color>
