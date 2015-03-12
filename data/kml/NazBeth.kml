@@ -23,6 +23,10 @@
         <tessellate>1</tessellate>
         <altitudeMode>absolute</altitudeMode>
         <coordinates>35.303333,32.701944,0
+		35.499573,32.603229,0
+		35.513306,32.157884,0
+		35.492706,31.799610,0
+		35.227661,31.767143,0
 		35.207538,31.704301,0
 		</coordinates>
       </LineString>
