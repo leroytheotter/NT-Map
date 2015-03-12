@@ -2,19 +2,19 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <Placemark>
-      <name>Journey from Nazareth to Bethlehem</name>
+      <name>Paul's First Missionary Journey</name>
       <description>
         <![CDATA[
 			<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100;border-collapse:collapse;padding:3px 3px 3px 3px">
-			<img src="data/images/birth-of-jesus-christ-mormon.jpg" alt="Birth of Jesus Christ" width="250"><br>
+			<img src="data/images/Paul.jpg" alt="Birth of Jesus Christ" width="250"><br>
 			<tr><td><b>Date</b></td>
-			<td>6 BC</td></tr>
+			<td>46-49 AD</td></tr>
 			<tr><td><b>Location</b></td>
-			<td>Route from Nazareth to Bethlehem</td></tr>
+			<td>North East of Mediterranean Sea</td></tr>
 			<tr><td><b>Scriptoral Reference</b></td>
-			<td><a href="https://www.lds.org/scriptures/nt/luke/2?lang=eng#3">Mark 1:9-11</a></td></tr>
+			<td><a href="https://www.lds.org/scriptures/nt/acts/13?lang=eng">Acts 13:4-14:28</a></td></tr>
 			<tr><td><b>Description</b></td>
-			<td>Mary and Joseph return to the hometown of Joseph. 80 miles/129 km</td></tr>
+			<td>Paul went on several missions. This is the path of his first mission.</td></tr>
         ]]>
       </description>
 	  <styleUrl>#yellowLineGreenPoly</styleUrl>
@@ -22,12 +22,15 @@
         <extrude>1</extrude>
         <tessellate>1</tessellate>
         <altitudeMode>absolute</altitudeMode>
-        <coordinates>35.303333,32.701944,0
-		35.499573,32.603229,0
-		35.513306,32.157884,0
-		35.492706,31.799610,0
-		35.227661,31.767143,0
-		35.207538,31.704301,0
+        <coordinates>
+		30.849609,36.891703,0
+		32.827148,35.705262,0
+		35.870361,36.309592,0
+		33.870850,35.177176,0
+		32.453613,34.799145,0
+		30.706787,36.882916,0
+		30.805664,38.175592,0
+		31.596680,37.898698,0
 		</coordinates>
       </LineString>
     </Placemark>

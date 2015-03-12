@@ -4,7 +4,7 @@
 
 //Define mpa layer variables
 var map,BaseMap,Satellite_Map;
-var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, Water, Geth, Calvary, Rez, Feeds5000, RezAlt;
+var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, Water, Geth, Calvary, Rez, Feeds5000, RezAlt, Paul;
 
 //Define the default map projection
 var projection = ol.proj.get('EPSG:3857');
@@ -25,7 +25,7 @@ function CreateMap() {
         target: 'map',
 
         //Set up the layers that will be loaded in the map
-        layers: [BaseMap, Satellite_Map, BoC, Temple, Nazareth, Bapt, NazBeth, Water, Feeds5000, BethEgypt, Wedding, SoM, Geth, Calvary, Rez, RezAlt],
+        layers: [BaseMap, Satellite_Map, BoC, Temple, Nazareth, Bapt, NazBeth, Water, Feeds5000, BethEgypt, Wedding, SoM, Geth, Calvary, Rez, RezAlt, Paul],
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
@@ -168,6 +168,20 @@ function LocationSelector(location)
             midCoordIndex = parseInt(myCoords.length/2);
             midCoord = myCoords[midCoordIndex];
             PopUp_FromCoord(midCoord,NazBeth.getSource().getFeatures()[0]);
+            break;
+			
+		case "Paul":
+            //Show route from Paul's journey
+            TurnAllLayersOff();
+            Paul.setVisible(true);
+            //Set the view as the extent of the polyline
+            var extent = Paul.getSource().getExtent();
+            map.getView().fitExtent(extent, map.getSize());
+            //Find a vertex half way down the line, roughly, and set that as the popup location
+            myCoords = Paul.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            midCoordIndex = parseInt(myCoords.length/2);
+            midCoord = myCoords[midCoordIndex];
+            PopUp_FromCoord(midCoord,Paul.getSource().getFeatures()[0]);
             break;
 
 		case "Water":
@@ -354,6 +368,13 @@ function CreateLayers() {
         source: new ol.source.KML({
             projection: projection,
             url: 'data/kml/NazBeth.kml'
+        })
+    });
+	
+    Paul = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/paul.kml'
         })
     });
 	
