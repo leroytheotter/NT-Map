@@ -100,6 +100,7 @@ function LocationSelector(location)
             //Show only Birth of Christ
             TurnAllLayersOff();
             BoC.setVisible(true);
+            //Set the view as an offset to provide room for the popup
             var Coord = BoC.getSource().getFeatures()[0].getGeometry().getCoordinates();
             var x0 = Coord[0];
             var y0 = Coord[1];
@@ -114,6 +115,7 @@ function LocationSelector(location)
             //Show only Christ at the Temple
             TurnAllLayersOff();
             Temple.setVisible(true);
+            //Set the view as an offset to provide room for the popup
             var Coord = Temple.getSource().getFeatures()[0].getGeometry().getCoordinates();
             var x0 = Coord[0];
             var y0 = Coord[1];
@@ -127,6 +129,7 @@ function LocationSelector(location)
             //Show only Nazareth
             TurnAllLayersOff();
             Nazareth.setVisible(true);
+            //Set the view as an offset to provide room for the popup
             var Coord = Nazareth.getSource().getFeatures()[0].getGeometry().getCoordinates();
             var x0 = Coord[0];
             var y0 = Coord[1];
@@ -140,6 +143,7 @@ function LocationSelector(location)
             //Show baptism at river Jordan
             TurnAllLayersOff();
             Bapt.setVisible(true);
+            //Set the view as an offset to provide room for the popup
             var Coord = Bapt.getSource().getFeatures()[0].getGeometry().getCoordinates();
             var x0 = Coord[0];
             var y0 = Coord[1];
@@ -153,17 +157,27 @@ function LocationSelector(location)
             //Show route from Nazareth to Bethlehem
             TurnAllLayersOff();
             NazBeth.setVisible(true);
+            //Set the view as the extent of the polyline
             var extent = NazBeth.getSource().getExtent();
             map.getView().fitExtent(extent, map.getSize());
-            PopUp_FromFeature(NazBeth.getSource().getFeatures()[0]);
+            //Find a vertex half way down the line, roughly, and set that as the popup location
+            myCoords = NazBeth.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            midCoordIndex = parseInt(myCoords.length/2);
+            midCoord = myCoords[midCoordIndex];
+            PopUp_FromCoord(midCoord,NazBeth.getSource().getFeatures()[0]);
             break;
 
 		case "Water":
             //Show Christ walks on Water
             TurnAllLayersOff();
             Water.setVisible(true);
-            var extent = Water.getSource().getExtent();
-            map.getView().fitExtent(extent, map.getSize());
+            //Set the view as an offset to provide room for the popup
+            var Coord = Water.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
+            map.getView().setZoom(13);
             PopUp_FromFeature(Water.getSource().getFeatures()[0]);
             break;
 			
@@ -171,8 +185,13 @@ function LocationSelector(location)
             //Show Christ feeds 5000
             TurnAllLayersOff();
             Feeds5000.setVisible(true);
-            var extent = Feeds5000.getSource().getExtent();
-            map.getView().fitExtent(extent, map.getSize());
+            //Set the view as an offset to provide room for the popup
+            var Coord = Feeds5000.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
+            map.getView().setZoom(13);
             PopUp_FromFeature(Feeds5000.getSource().getFeatures()[0]);
             break;
     }
@@ -251,14 +270,33 @@ function CreateLayers() {
 /**********************************************************/
 
 function PopUp_Bubble(evt) {
-    // Convert On-Click event to a feature for pass though to the main popup script
 
+    //Add Popup system
+    var element = document.getElementById('popup');
+
+    var popup = new ol.Overlay({
+        element: element,
+        positioning: 'bottom-center',
+        stopEvent: false
+    });
+    map.addOverlay(popup);
+
+    //Try to get a feature at the point of interest
     var feature = map.forEachFeatureAtPixel(evt.pixel,
-        function(feature) {
+        function(feature, layer) {
             return feature;
         });
 
-    PopUp_FromFeature(feature)
+    //if we found a feature then create and show the popup.
+    if (feature) {
+
+        var coord = map.getCoordinateFromPixel(evt.pixel);
+        PopUp_FromCoord(coord, feature)
+    }
+    else{
+        $(element).popover('destroy');
+    }
+
 }
 
 function PopUp_FromFeature(feature){
@@ -293,6 +331,33 @@ function PopUp_FromFeature(feature){
     else {
         $(element).popover('destroy');
     }
+
+}
+
+function PopUp_FromCoord(coord, feature){
+
+    //Add Popup system
+    var element = document.getElementById('popup');
+
+    var popup = new ol.Overlay({
+        element: element,
+        positioning: 'bottom-center',
+        stopEvent: false
+    });
+    map.addOverlay(popup);
+
+    //if we found a feature then create and show the popup.
+    popup.setPosition(coord);
+    var displaycontent = ('<b>' + feature.get('name') + '</b>' + '<br>'
+    + '<br>' + feature.get('description')
+    );
+    $(element).popover({
+        'placement': 'top',
+        'html': true,
+        'content': displaycontent
+    });
+
+    $(element).popover('show');
 
 }
 
