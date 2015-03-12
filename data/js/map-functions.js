@@ -25,7 +25,7 @@ function CreateMap() {
         target: 'map',
 
         //Set up the layers that will be loaded in the map
-        layers: [BaseMap, Satellite_Map, BoC, Temple, Nazareth, Bapt, NazBeth, Water, Feeds5000, BethEgypt, Wedding, SoM, Geth, Calvary, RezAlt],
+        layers: [BaseMap, Satellite_Map, BoC, Temple, Nazareth, Bapt, NazBeth, Water, Feeds5000, BethEgypt, Wedding, SoM, Geth, Calvary, Rez, RezAlt],
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
