@@ -4,7 +4,7 @@
 
 //Define mpa layer variables
 var map,BaseMap;
-var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, WoW, Geth, Calvary, Rez;
+var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, Water, Geth, Calvary, Rez;
 
 //Define the default map projection
 var projection = ol.proj.get('EPSG:3857');
@@ -25,7 +25,7 @@ function CreateMap() {
         target: 'map',
 
         //Set up the layers that will be loaded in the map
-        layers: [BaseMap, BoC, Temple, Nazareth, Bapt, NazBeth],
+        layers: [BaseMap, BoC, Temple, Nazareth, Bapt, NazBeth, Water],
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
@@ -100,7 +100,6 @@ function LocationSelector(location)
             //Show only Birth of Christ
             TurnAllLayersOff();
             BoC.setVisible(true);
-            //Find the coordinate, and set the view with enough room to show the popup
             var Coord = BoC.getSource().getFeatures()[0].getGeometry().getCoordinates();
             var x0 = Coord[0];
             var y0 = Coord[1];
@@ -115,7 +114,6 @@ function LocationSelector(location)
             //Show only Christ at the Temple
             TurnAllLayersOff();
             Temple.setVisible(true);
-            //Find the coordinate, and set the view with enough room to show the popup
             var Coord = Temple.getSource().getFeatures()[0].getGeometry().getCoordinates();
             var x0 = Coord[0];
             var y0 = Coord[1];
@@ -129,7 +127,6 @@ function LocationSelector(location)
             //Show only Nazareth
             TurnAllLayersOff();
             Nazareth.setVisible(true);
-            //Find the coordinate, and set the view with enough room to show the popup
             var Coord = Nazareth.getSource().getFeatures()[0].getGeometry().getCoordinates();
             var x0 = Coord[0];
             var y0 = Coord[1];
@@ -143,7 +140,6 @@ function LocationSelector(location)
             //Show baptism at river Jordan
             TurnAllLayersOff();
             Bapt.setVisible(true);
-            //Find the coordinate, and set the view with enough room to show the popup
             var Coord = Bapt.getSource().getFeatures()[0].getGeometry().getCoordinates();
             var x0 = Coord[0];
             var y0 = Coord[1];
@@ -155,18 +151,19 @@ function LocationSelector(location)
 
         case "NazBeth":
             //Show route from Nazareth to Bethlehem
-            TurnAllLayersOff();
             NazBeth.setVisible(true);
-            //Zoom the view to the extent of the line
             var extent = NazBeth.getSource().getExtent();
             map.getView().fitExtent(extent, map.getSize());
-            //Find the center of the line, and place the popup there
-            var Coord = NazBeth.getSource().getFeatures()[0].getGeometry().getCoordinates();
-            midCoordIndex = parseInt(Coord.length/2);
-            midCoord = Coord[midCoordIndex];
             PopUp_FromFeature(NazBeth.getSource().getFeatures()[0]);
             break;
 
+		case "Water":
+            //Show Christ walks on Water
+            Water.setVisible(true);
+            var extent = Water.getSource().getExtent();
+            map.getView().fitExtent(extent, map.getSize());
+            PopUp_FromFeature(Water.getSource().getFeatures()[0]);
+            break;
     }
 }
 
@@ -218,7 +215,13 @@ function CreateLayers() {
             url: 'data/kml/NazBeth.kml'
         })
     });
-    NazBeth.layer_type = 'line';
+	
+    Water = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/walkwater.kml'
+        })
+    });
 }
 /**********************************************************/
 /*             End layer definition function              */
