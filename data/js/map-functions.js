@@ -29,8 +29,8 @@ function CreateMap() {
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
-            center: ol.proj.transform([35.2167, 31.7833], 'EPSG:4326', projection),
-            zoom: 8
+            center: ol.proj.transform([23.181152, 37.522797], 'EPSG:4326', projection),
+            zoom: 5.5
         })
     });
 
@@ -76,8 +76,8 @@ function LocationSelector(location)
             //try to destroy it before doing anything else
             $(element).popover('destroy');
 
-            map.getView().setCenter(ol.proj.transform([35.2167, 31.7833], 'EPSG:4326', projection));
-            map.getView().setZoom(8);
+            map.getView().setCenter(ol.proj.transform([23.181152, 37.522797], 'EPSG:4326', projection));
+            map.getView().setZoom(5.5);
             break;
 
         case "all":
@@ -96,7 +96,7 @@ function LocationSelector(location)
                 }
             }
             map.getView().setCenter(ol.proj.transform([23.181152, 37.522797], 'EPSG:4326', projection));
-            map.getView().setZoom(4);
+            map.getView().setZoom(5.5);
             break;
 
         case "BoC":
