@@ -4,7 +4,7 @@
 
 //Define mpa layer variables
 var map,BaseMap,Satellite_Map;
-var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, Water, Geth, Calvary, Rez, Feeds5000;
+var BoC, NazBeth, BethEgypt, Temple, Nazareth, Bapt, Wedding, SoM, Water, Geth, Calvary, Rez, Feeds5000, RezAlt;
 
 //Define the default map projection
 var projection = ol.proj.get('EPSG:3857');
@@ -25,7 +25,7 @@ function CreateMap() {
         target: 'map',
 
         //Set up the layers that will be loaded in the map
-        layers: [BaseMap, Satellite_Map, BoC, Temple, Nazareth, Bapt, NazBeth, Water, Feeds5000, BethEgypt, Wedding, SoM, Geth, Calvary, Rez],
+        layers: [BaseMap, Satellite_Map, BoC, Temple, Nazareth, Bapt, NazBeth, Water, Feeds5000, BethEgypt, Wedding, SoM, Geth, Calvary, RezAlt],
 
         //Establish the view area. Note the reprojection from lat long (EPSG:4326) to Web Mercator (EPSG:3857)
         view: new ol.View({
@@ -281,6 +281,20 @@ function LocationSelector(location)
             map.getView().setZoom(13);
             PopUp_FromFeature(Rez.getSource().getFeatures()[0]);
             break;
+			
+			case "RezAlt":
+            //Show RezAlt
+            TurnAllLayersOff();
+            RezAlt.setVisible(true);
+            //Set the view as an offset to provide room for the popup
+            var Coord = RezAlt.getSource().getFeatures()[0].getGeometry().getCoordinates();
+            var x0 = Coord[0];
+            var y0 = Coord[1];
+            var center = [x0,y0+2500];
+            map.getView().setCenter(center);
+            map.getView().setZoom(13);
+            PopUp_FromFeature(RezAlt.getSource().getFeatures()[0]);
+            break;
     }
 }
 
@@ -391,6 +405,12 @@ function CreateLayers() {
         source: new ol.source.KML({
             projection: projection,
             url: 'data/kml/rez.kml'
+        })
+    });
+	RezAlt = new ol.layer.Vector({
+        source: new ol.source.KML({
+            projection: projection,
+            url: 'data/kml/rezalt.kml'
         })
     });
 }
