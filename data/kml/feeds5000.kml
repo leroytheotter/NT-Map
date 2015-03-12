@@ -27,7 +27,7 @@
     </Placemark>
 	<Style id="Icon">
     <IconStyle>
-      <Icon><href>data/icons/5000.png</href></Icon>
+      <Icon><href>data/icons/5000.jpg</href></Icon>
       <scale>0.15</scale>
     </IconStyle>
   </Style>
