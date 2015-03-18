@@ -86,7 +86,9 @@
             <div>
                 <h3 id="contents">Contents</h3>
                 <a href="#videotour">Video Tour of the Site and the Coding</a><br>
-                <a href="#overview">Overview</a><br>
+                <a href="#overview">Introduction</a><br>
+                <a href="#sources">Sources and Modules</a><br>
+                <a href="#dataformats">Data Formats</a>
 
                 <a href="#licence">Licence</a><br>
             </div>
@@ -95,7 +97,27 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/yLxY4s-juss" frameborder="0" allowfullscreen></iframe><br>
             </div>
             <div>
-                <h3 id="overview">Overview</h3>
+                <h3 id="overview">Introduction</h3>
+                The New Testament Web Map is a web map designed to display information on selected events and locations
+                from the New Testament. The purpose of the map is to inform the reader and to encourage scriptural and
+                historical study.<br>
+            </div>
+            <div>
+                <h3 id="sources">Sources and Modules</h3>
+                Several third party javascript modules are used in the operation of this site. The first is
+                <a href="http://getbootstrap.com/">Bootstrap</a> (3.3.2) which handles the formatting and provides the
+                handling for the map popups. Next is <a href="http://jquery.com/">jQuery</a> (1.11.1) which provides
+                additional functionality for the map and popups. Last is <a href="http://openlayers.org/">OpenLayers 3</a>
+                which generates the map and handles all the geospatial processing and display of the locations from their
+                KML files.
+
+                <h3 id="dataformats">Data Formats</h3>
+                The data for each location (line or point) is stored in separate KML files. These KML files contain the
+                point coordinates for the location (or the path coordinate set for a line), the name of the location,
+                and the description of the site (formatted as an HTML table inside the KML file). The images references
+                and links displayed in the popup bubbles are also located inside the HTML descriptions. The image files
+                themselves for both the description images and the map icons are stored on the server and referenced in
+                the KML file.
             </div>
 
             <div>
@@ -103,6 +125,7 @@
                 <h4>HTML and Javascript Code</h4>
                 The code of this website is licenced by Michael Scott and Ryan Moore under the MIT Licence as provided below.<br>
                 <div>
+                    <br>
                     <!-- Begin MIT Licence -->
                     The MIT License (MIT)<br>
                     <br>
