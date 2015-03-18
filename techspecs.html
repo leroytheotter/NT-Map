@@ -120,10 +120,11 @@
                 <h3 id="sources">Sources and Modules</h3>
                 Several third party javascript modules are used in the operation of this site. The first is
                 <a href="http://getbootstrap.com/">Bootstrap</a> (3.3.2) which handles the formatting and provides the
-                handling for the map popups. Next is <a href="http://jquery.com/">jQuery</a> (1.11.1) which provides
-                additional functionality for the map and popups. Last is <a href="http://openlayers.org/">OpenLayers 3</a>
-                which generates the map and handles all the geospatial processing and display of the locations from their
-                KML files.<br>
+                handling for the map popups. Second is <a href="http://jquery.com/">jQuery</a> (1.11.1) which provides
+                additional functionality for the map and popups. Third is <a href="http://highslide.com/">
+                Highslide JS</a> which allows for full sized images to be opened when the thumbnail is clicked. Last is
+                <a href="http://openlayers.org/">OpenLayers 3</a> which generates the map and handles all the geospatial
+                processing and display of the locations from their KML files.<br>
                 <br>
                 The information found in the description for each location and event was taken from a variety of sources.
                 These sources include scriptural descriptions, chronologies, modern research, traditional locations,
@@ -212,10 +213,12 @@
                 visibility of the current basemap layer to false, and the other basemap layer to true.<br>
 
                 <h3 id="UMLsequence">UML Sequence Diagram</h3>
+                Here is a UML sequence diagram for the project (click for larger version).<br>
 
+                <!-- This is the handler for displaying a full sized image when clicking the thumbnail -->
                 <a id="thumb1" href="data/images/UML_Sequence.png" class="highslide" onclick="return hs.expand(this)">
-                    <img src="../images/thumbnail.jpg" alt="Highslide JS"
-                         title="Click to enlarge" height="120" width="107" /></a>
+                    <img src="data/images/UML_Sequence_thumb.png" alt="UML Sequence Diagram"
+                         title="Click to enlarge" height="588" width="400" /></a>
 
 
 
