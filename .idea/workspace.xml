@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a66a4dab-d754-4ff0-b712-baf6c19c32bf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/help.html" afterPath="$PROJECT_DIR$/help.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/techspecs.html" afterPath="$PROJECT_DIR$/techspecs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nt-map.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,8 +58,8 @@
       <file leaf-file-name="techspecs.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/techspecs.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22844344" vertical-offset="561" max-vertical-offset="4556">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3717805" vertical-offset="2898" max-vertical-offset="4624">
+              <caret line="221" column="0" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
               <folding>
                 <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -267,12 +267,6 @@
       <created>1424751432454</created>
       <option name="number" value="Default" />
       <updated>1424751432454</updated>
-    </task>
-    <task id="LOCAL-00095" summary="Add UI controls">
-      <created>1425613099171</created>
-      <option name="number" value="00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1425613099171</updated>
     </task>
     <task id="LOCAL-00096" summary="Add UI controls">
       <created>1425613148655</created>
@@ -562,7 +556,13 @@
       <option name="project" value="LOCAL" />
       <updated>1426648193771</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="Updated Tech Specs">
+      <created>1426648655391</created>
+      <option name="number" value="00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1426648655393</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1151,8 +1151,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/techspecs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22844344" vertical-offset="561" max-vertical-offset="4556">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3717805" vertical-offset="2898" max-vertical-offset="4624">
+          <caret line="221" column="0" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#img#0;n#a#0;n#p#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
