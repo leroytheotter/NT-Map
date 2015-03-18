@@ -141,7 +141,34 @@
                 <h5>JavaScript</h5>
                 There are several standard javascript modules that are used throughout the code and the site. These
                 modules are bootstrap, jquery, and openlayers. Additionally, much of the functionality of the site is
-                controlled by a custom javascript file that controls the map and the location data.
+                controlled by a custom javascript file that controls the map and the location data.<br>
+                <br>
+                This javascript file contains all the map functions and controls used on the site, and thus is - rather
+                uncreatively - named map-functions. Within the map-functions script, each action is grouped as a
+                function. These functions are called either by the user interaction with the map or form controls,
+                automatically on page load, or by other functions which were themselves called by one of the first two
+                options.<br>
+                <br>
+                The first function that is called is the <b>CreateMap</b> function. This function calls another function
+                to create the layers that will be used in the map, creates the map object, loads all the layers into the
+                map, adds the scale line control, deloads the satilite view, and sets up the initial popup system. <br>
+                The second function that is run is the <b>CreateLayers</b> function, that is called by the
+                <b>CreateMap</b> function. This function creates a new map layer for both possible base maps, and for
+                each location - calling the data from the location's respective KML file. This function is relatively
+                simple as it just runs the same code for each layer, reading them to be added to the map document.<br>
+                The next function is the <b>LocationSelector</b> function. This function is called when the user selects
+                a location in the option box below the map on the main page. When the user selects an option the
+                function will run the code in a specific case, where the case chosen depends on what the user selected.
+                If the user chose to clear all items, then the code will run the None case. The code will run another
+                function called <b>TurnAllLayersOff</b>, then it wil remove all popups and rest the view to default. If
+                the user selects the view all case, the code will run the All case. First the code will run the
+                <b>TurnAllLayersOff</b> function, then it will destroy any popups that are open. Next it will enable
+                each layer - begging with the third layer, as the first two layers are the basemaps. Once all the layers
+                are enabled, the script will reset the zoom and extents to the default settings. Finally, if the user
+                selects a location, the script will find the corresponding location case. Next, the script will run the
+                <b>TurnAllLayersOff</b> function. Then it wll enable the selected layer, extract the coordinates from
+                the location, zoom to the selected location, and finally call the popup handler.<br>
+
 
             </div>
 
