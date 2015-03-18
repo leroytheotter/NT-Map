@@ -89,6 +89,7 @@
                 <a href="#overview">Introduction</a><br>
                 <a href="#sources">Sources and Modules</a><br>
                 <a href="#dataformats">Data Formats</a>
+                <a href="#codelayout">Code Layout</a>
 
                 <a href="#licence">Licence</a><br>
             </div>
@@ -101,15 +102,18 @@
                 The New Testament Web Map is a web map designed to display information on selected events and locations
                 from the New Testament. The purpose of the map is to inform the reader and to encourage scriptural and
                 historical study.<br>
-            </div>
-            <div>
+
                 <h3 id="sources">Sources and Modules</h3>
                 Several third party javascript modules are used in the operation of this site. The first is
                 <a href="http://getbootstrap.com/">Bootstrap</a> (3.3.2) which handles the formatting and provides the
                 handling for the map popups. Next is <a href="http://jquery.com/">jQuery</a> (1.11.1) which provides
                 additional functionality for the map and popups. Last is <a href="http://openlayers.org/">OpenLayers 3</a>
                 which generates the map and handles all the geospatial processing and display of the locations from their
-                KML files.
+                KML files.<br>
+                <br>
+                The information found in the description for each location and event was taken from a variety of sources.
+                These sources include scriptural descriptions, chronologies, modern research, traditional locations,
+                and appropriate images.<br>
 
                 <h3 id="dataformats">Data Formats</h3>
                 The data for each location (line or point) is stored in separate KML files. These KML files contain the
@@ -119,11 +123,30 @@
                 themselves for both the description images and the map icons are stored on the server and referenced in
                 the KML file.
             </div>
+            <div>
+                <h3 id="codelayout">Code Layout</h3>
+                <h4>Logic</h4>
+                <h5>HTML</h5>
+                The primary HTML for the site is relatively simple. It primarily consists of a container that holds the
+                map and the popup handler. Below the map two option boxes allow the user to select a location to zoom to
+                and provide detail on, and to allow the user to select between a street map and a satilite hybrid map.
+                The rest of the HTML is the site layout and administrative functions: calling javascript functions that
+                are required for the map and site to work, loading CSS, and setting up the header and footer with the
+                correct information and links. This additional code is mostly the same on each page of the map as it is
+                just a container for the body of the page.<br>
+                <h5>CSS</h5>
+                The CSS used by the site is mostly the default CSS provided by openlayers and bootstrap. The only unique
+                CSS file is the page default CSS that is based off a bootstrap theme and customized with data unique to
+                this site (primarily just the location of the header and footer and an offset for anchors).<br>
+                <h5>JavaScript</h5>
+
+            </div>
 
             <div>
                 <h3 id="licence">Licence</h3>
                 <h4>HTML and Javascript Code</h4>
-                The code of this website is licenced by Michael Scott and Ryan Moore under the MIT Licence as provided below.<br>
+                The code of this website is licenced by Michael Scott and Ryan Moore under the MIT Licence as provided
+                below.<br>
                 <div>
                     <br>
                     <!-- Begin MIT Licence -->
@@ -154,7 +177,8 @@
 
                 <h4>Contents</h4>
                 The contents of this website are licenced by Michael Scott and Ryan Moore under the
-                <a href="http://creativecommons.org/licenses/by/4.0/">Commons Attribution 4.0 International License</a>.<br>
+                <a href="http://creativecommons.org/licenses/by/4.0/">Commons Attribution 4.0 International License</a>
+                .<br>
                 <br>
 
             </div>
